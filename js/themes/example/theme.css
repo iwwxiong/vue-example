@@ -1,0 +1,199 @@
+.dialog-main
+{
+    position:fixed;
+    width:640px;
+    border:5px solid rgba(0,0,0,.2);
+    background-color:#FFF;
+    left:0;
+    top:0;
+    background-clip:padding-box;
+    font-size:16px;
+    color:#212121;
+    font-family:"Microsoft YaHei",SimSun,Arial;
+}
+
+.dialog-main button
+{
+    font-family:"Microsoft YaHei",SimSun,Arial;
+}
+
+.dialog-mask
+{
+    background-color:#666;
+    opacity:.8;
+    filter:alpha(opacity=80);
+}
+
+.dialog-button
+{
+    display:inline-block;
+    outline:none;
+    cursor:pointer;
+}
+
+.dialog-button button
+{
+    background:0;
+    border:0;
+    margin:0;
+    padding:0;
+}
+
+.dialog-button-close button
+{
+    width:60px;
+    height:60px;
+    font-size:40px;
+    line-height:40px;
+    color:#aaa;
+    outline:none;
+    cursor: pointer;
+}
+
+.dialog-button-close button:hover
+{
+    color:#000;
+}
+
+.dialog-title
+{
+    height:60px;
+    text-align:center;
+    border-bottom:1px solid #eee;
+}
+
+.dialog-title-label
+{
+    font-size:26px;
+    line-height:60px;
+    display:inline;
+}
+
+.dialog-style-closable .dialog-title-label {margin-right:-60px;}
+
+.dialog-title-buttons
+{
+    float:right;
+}
+
+.dialog-message pre
+{
+    font-family:"Microsoft YaHei",SimSun,Arial;
+    word-wrap:break-word;
+    margin:0;
+    padding:0;
+}
+
+.dialog-footer
+{
+    height:80px;
+    text-align:center;
+}
+
+.dialog-footer-buttons
+{
+    height:40px;
+    padding:20px 0;
+}
+
+.dialog-footer-buttons .dialog-button
+{
+    height:40px;
+    background-color:#fe8333;
+    border-radius:4px;
+    margin:0 15px;
+}
+
+.dialog-footer-buttons .dialog-button-cancel
+{
+    background-color:#c3c3c3;
+}
+
+.dialog-footer-buttons .dialog-button button
+{
+    line-height:40px;
+    font-size:16px;
+    color:#FFF;
+    padding:0 40px;
+    outline: none;
+    cursor:pointer;
+}
+.dialog-footer-buttons .dialog-button button:focus,
+.dialog-footer-buttons .dialog-button button:hover{
+    background: #e4762e;
+    border-radius:4px;
+}
+.dialog-style-draggable .dialog-title
+{
+    cursor:move;
+}
+
+.dialog-style-unclosable .dialog-button-close button
+{
+    display:none;
+}
+
+.dialog-layout
+{
+    margin-bottom:10px;
+    line-height:24px;
+}
+
+.dialog-textbox
+{
+    border-radius:4px;
+}
+
+.dialog-textbox input
+{
+    border:1px solid #d4d8df;
+    background:#fbfaf9;
+    width:100%;
+    height:36px;
+    display:block;
+    border-radius:4px;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    -khtml-box-sizing:border-box;
+    padding:0 10px;
+}
+.dialog-textbox input:focus{
+    border: 1px solid #fe8333;
+}
+.dialog-textbox textarea
+{
+    width:100%;
+    border:0;
+    resize:none;
+    line-height:24px;
+    display:block;
+    border-radius:4px;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    -khtml-box-sizing:border-box;
+    padding:5px 10px;
+}
+
+.dialog-checkbox
+{
+    display:inline;
+}
+
+.dialog-checkbox input
+{
+    vertical-align:middle;
+}
+
+.dialog-main:focus,.dialog-textbox input:focus,.dialog-textbox textarea:focus
+{
+    outline:0;
+}
+
+.dialog-message,.dialog-body
+{
+    margin:50px 50px 30px;
+}

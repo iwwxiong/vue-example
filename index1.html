@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <script type="text/javascript" src="vue.min.js"></script>
+</head>
+<body>
+<div class="demo" v-for="item of items">
+  {{$index}}-{{item.name}}
+</div>
+<script type="text/javascript">
+  var demo = new Vue({
+    el: ".demo",
+    data: {
+      items: [
+        {name: 'wwxiong'},
+        {name: 'Teddy'}
+      ]
+    }
+  })
+</script>
+</body>
+</html>

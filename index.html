@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="utf-8">
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/vue.js"></script>
+  <script>window.__jdialog = {register: true, theme:"example"};</script>
+  <script src="js/jdialog.min.js" type="text/javascript" charset="utf-8"></script>
+  <link rel="stylesheet" type="text/css" href="css/example.css">
+</head>
+
+<body>
+  <div id="topic" class="module" v-show="weight!=undefined">
+    <tcomponent :weight=weight></tcomponent>
+    <p class="body">请设置获得分值方式：</p>
+    <!--<ol>
+      <li v-on:click="check($event)">
+        <input type="radio">
+        <p>管理员<input type="text">次数</p>
+      </li>
+      <li v-on:click="check($event)">
+        <input type="radio">
+        <p>管理员<input type="text">次数</p>
+      </li>
+    </ol>-->
+    <topiccomponent :number=number></topiccomponent>
+    <!--<div class="items">
+      <p class="li2">在课群话题讨论区回帖数大于或等于<input type="text">条，方可计入成绩。</p>
+    </div>-->
+  </div>
+  <div id="course" class="module" v-show="weight!=undefined">
+    <tcomponent :weight=weight></tcomponent>
+    <p class="body">课群课程：将根据视频课程的学习进度计算分支，请调整每个视频的权重（权重之和为100%）：</p>
+    <icomponent v-for="item of items" :item=item :index=$index></icomponent>
+  </div>
+  <div id="exam" class="module" v-show="weight!=undefined">
+    <tcomponent :weight=weight></tcomponent>
+    <p class="body">在线考试：将根据在线考试的考试成绩计算分值，请调整每个考试的权重（权重之和为100%）：</p>
+    <icomponent v-for="item of items" :item=item :index=$index></icomponent>
+  </div>
+  <div id="homework" class="module" v-show="weight!=undefined">
+    <tcomponent :weight=weight></tcomponent>
+    <p class="body">作业系统：将根据作业系统的作业成绩计算分值，请调整每个作业的权重（权重之和为100%）：</p>
+    <icomponent v-for="item of items" :item=item :index=$index></icomponent>
+  </div>
+  <div id="ceping" class="module" v-show="weight!=undefined">
+    <tcomponent :weight=weight></tcomponent>
+    <p class="body">学前测评：将根据学前测频的测评完成情况计算分值，请调整每个测评的权重（权重之和为100%）：</p>
+    <icomponent v-for="item of items" :item=item :index=$index></icomponent>
+  </div>
+  <div id="document" class="module" v-show="weight!=undefined">
+    <tcomponent :weight=weight></tcomponent>
+    <p class="body">请设置获得分值的方式：</p>
+    <documentcomponent :number=number></documentcomponent>
+  </div>
+
+</body>
+<script type="text/javascript" src="./js/example.js"></script>
+</html>
