@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  var admin = true;
   var data = {
     topic: {
       weight: 20,
@@ -9,7 +10,7 @@ $(document).ready(function(){
       items: [
         {
           id: 1,
-          name: '英语四六级阅读理解',
+          name: '<a>英语四六级阅读理解</a>',
           weight: 50
         },
         {
@@ -35,6 +36,18 @@ $(document).ready(function(){
       ]
     }
   }
+
+  // 注册过滤器：html转义
+  // vuejs默认已经帮忙转义，故无需处理，此处仅作学习使用
+  Vue.filter('safe', function (value) {
+    return value
+            .replace('&', '&amp;')
+            .replace('<', '&lt;')
+            .replace('>', '&gt;')
+            .replace('\"', '&quot;')
+            .replace('\'', '&#x27;')
+            .replace('\/', '&*x2F;')
+  });
 
   Vue.transition('stagger', {
     stagger: function (index) {
@@ -87,11 +100,17 @@ $(document).ready(function(){
   // 标题组件
   Vue.component('tcomponent', {
     props: ['weight'],
+    data: function () {
+      return { admin: admin }
+    },
     template: ' \
       <div class="title"> \
         <span class="icon"></span> \
-        <p>模块的分支权重<input type="text" placeholder="请输入" v-model="weight" value={{weight}} number>%</p> \
-        <span class="add" @click="add()">+</span> \
+        <p>模块的分支权重\
+        <input type="text" placeholder="请输入" v-model="weight" value={{weight}} number v-if=admin>\
+        <input type="text" placeholder="请输入" v-model="weight" value={{weight}} number readonly v-else>\
+        %</p> \
+        <span class="add" @click="add()" v-show="admin">+</span> \
       </div> \
     ',
     methods: {
@@ -138,11 +157,17 @@ $(document).ready(function(){
   // 列表组件
   Vue.component('icomponent', {
     props: ['item', 'index'],
+    data: function () {
+      return { admin: admin }
+    },
     template: '\
       <div class="items">\
         <p class="li1">课程{{index + 1}}：{{item.name}}</p>\
-        <p class="li2">权重为<input type="text" v-model="item.weight" value={{item.weight}} number>%</p>\
-        <span class="del" @click="remove(index)">-</span>\
+        <p class="li2">权重为\
+        <input type="text" v-model="item.weight" value={{item.weight}} number v-if=admin>\
+        <input type="text" v-model="item.weight" value={{item.weight}} number v-else readonly>\
+        %</p>\
+        <span class="del" @click="remove(index)" v-show="admin">-</span>\
       </div>\
     ',
     methods: {

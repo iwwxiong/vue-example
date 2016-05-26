@@ -112,7 +112,7 @@
 .module ol li p input[type="text"]{
   width: 25px;
   height: 24px;
-  margin: auto 6px;
+  /*margin: auto 6px;*/
   background-color: #fbfaf9;
   border: 1px solid #d4d8df;
   border-radius: 2px;
